@@ -13,7 +13,7 @@ class SerfClient(object):
             host=self.host, port=self.port, timeout=self.timeout)
         self.connection.handshake()
         if rpc_auth:
-            self.connection.auth(rpc_auth)
+            self.connection._auth(rpc_auth)
 
     def event(self, name, payload=None, coalesce=True):
         """
